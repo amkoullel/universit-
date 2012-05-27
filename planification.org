@@ -1,0 +1,87 @@
+#+TITLE: planification du projet
+#+SEQ_TODO: TODO NEXT DONE
+
+Tout ceci n'est juste qu'une esquisse pour présenter un cadre de
+travail. Bien évidemment qu'il est simplifié et peut être ne reflète
+pas toutes les subtilités dans une université.
+
+* Présentation
+** université
+L'université propose trois diplômes :
+- Licence
+- Master 
+- Doctorat
+
+*** Formation
+Chacun des diplôme conclut une formation qui se déroule pendant un
+certain nombre de semestre :
+- licence se déroule en 3 ans soit 6 semestres
+- Master se déroule en 2 ans soit 4 semestres
+- Doctorat (dépend de la formation)
+
+*** Semestre
+Un semestre contient un certain nombre d'unité d'enseignement. C'est
+différent unité sont divisé comme suit :
+- unité d'enseignement fondamentale
+- unité d'enseignement de découverte 
+- etc
+
+Chaque semestre est dirigé par un enseignent qui en est le responsable
+et fait le lien entre les étudiants et les autres professeurs ou
+l'administration. C'est lui qui se charge des notes du semestre en
+question. 
+
+** étudiant 
+Un étudiant s'inscrit pour suivre une formation dans le temps que dure
+cette formation. A la fin de celle ci il reçoit le diplôme
+correspondant. L'étudiant est évalué chaque semestre.
+
+** professeur 
+Un professeur est responsable d'une unité d'enseignement. Il dispense
+les cours et est responsable des notes de son unité.
+
+* Diagrammes
+** diagramme de cas d'utilisation
+les acteurs :
+- administration 
+- étudiant
+- professeur 
+- professeur responsable
+
+[[file:use_case.png][diagramme de cas d'utilistion]]
+
+*** ajouter une formation
+Ce cas d'utilisation permet d'ajouter une formation. On a comme
+renseignement sa durée le diplôme obtenue après la formation le unités
+d'enseignement qu'elle contienne etc
+
+Pré-condition : que cette nouvelle formation n'existe pas encore
+Post-condition : Des étudiants peuvent s'inscrire dans cette formation 
+Acteur principal : l'administration de l'université
+
+*** supprimer une formation
+supprime une formation 
+Pré-condition : que cette formation existe déjà
+Post-condition : on ne peut plus s'inscrire dans cette formation
+Acteur principal : administration
+
+*** inscription étudiant :
+Un étudiant s'inscrit pour un semestre d'une formation donnée.
+Pré-condition : 
+- la formation existe 
+- l'étudiant satisfait aux conditions admissibilité
+Post-condition : l'étudiant est affecté à une classe pour le semestre.
+Acteur principal : l'administration ou l'étudiant (si réinscription)
+
+*** inscription d'un professeur 
+L'administration accueille un nouvel professeur.
+Pré-condition : le professeur n'était pas déjà inscrit 
+Post-condition : le nouvel professeur peut professer dans une classe
+Acteur principal : l'administration
+
+*** édition des notes 
+Le professeur renseigne pour un étudiant donné les différentes notes
+que celui ci a obtenu aux différents examens.   
+Pré-condition : être le professeur responsable du semestre
+Post-condition : rien 
+Acteur principal professeur 
